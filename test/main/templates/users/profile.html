@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль пользователя</title>
+    <link rel="stylesheet" href="{% static 'users/css/styles.css' %}">
+</head>
+<body>
+<div class="container">
+    <h2>Профиль: {{ user.username }}</h2>
+    <ul>
+        <li><strong>Имя пользователя:</strong> {{ user.username }}</li>
+        <li><strong>Email:</strong> {{ user.email }}</li>
+        {% if user.phone_number %}
+        <li><strong>Телефон:</strong> {{ user.phone_number }}</li>
+        {% endif %}
+        {% if user.date_of_birth %}
+        <li><strong>Дата рождения:</strong> {{ user.date_of_birth }}</li>
+        {% endif %}
+        {% if user.bio %}
+        <li><strong>О себе:</strong> {{ user.bio }}</li>
+        {% endif %}
+        {% if user.avatar %}
+        <li><strong>Аватар:</strong><br>
+            <img src="{{ user.avatar.url }}" width="100" alt="Аватар пользователя">
+        </li>
+        {% endif %}
+        <li><strong>Email подтверждён:</strong> {{ user.is_email_verified }}</li>
+    </ul>
+    <a href="{% url 'logout' %}">Выйти из аккаунта</a>
+</div>
+</body>
+</html>
