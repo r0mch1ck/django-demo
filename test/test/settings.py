@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-# Application definition
+# Applicatio
+# n definition
 
 INSTALLED_APPS = [
     'main',
@@ -105,8 +106,8 @@ DATABASES = {
 
     }
 }
-#
 """
+#docker run -d --name postgres-db -e POSTGRES_DB=test -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=qwer -p 5432:5432 postgres:latest
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

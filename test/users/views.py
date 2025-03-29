@@ -38,8 +38,7 @@ def logout_view(request):
     return redirect('login')
 
 class MySecureAPIView(APIView):
-    permission_classes = [IsAuthenticated]
-
+    #permission_classes = [IsAuthenticated]
     def get(self, request, format=None):
         content = {
             'user': request.user.username,
